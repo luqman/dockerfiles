@@ -13,6 +13,11 @@ build:
 run:
 	@docker run -it -v ${PWD}/config:/config -v ${PWD}/downloads:/downloads -p 6800:6800 --rm luqman/dockerfiles:aria2
 
+## push: push docker image to luqman/dockerfiles:aria2
+.PHONY: push
+push:
+	@docker push luqman/dockerfiles:aria2
+
 .PHONY: help
 help: Makefile
 	@echo
