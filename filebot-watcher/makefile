@@ -19,7 +19,7 @@ build:
 .PHONY: run
 run:
 	@make info
-	@docker run -it -v ${PWD}/config:/config -v ${PWD}/downloads:/downloads -p 6800:6800 --rm ${USERNAME}/${PROJECTNAME}
+	@docker run --rm -it -v "$PWD:/volume1" -v data:/data ${USERNAME}/${PROJECTNAME}/volume1/input --output /volume1/output
 
 ## push: push docker image
 .PHONY: push
